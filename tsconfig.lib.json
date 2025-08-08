@@ -1,21 +1,22 @@
 {
   "extends": "./tsconfig.json",
   "compilerOptions": {
-    "outDir": "./lib",
+    "outDir": "./dist",
     "declaration": true,
     "declarationMap": true,
     "sourceMap": true,
     "target": "ES2020",
     "module": "ESNext",
-    "moduleResolution": "bundler",
+    "moduleResolution": "node",
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
     "jsx": "preserve",
     "skipLibCheck": true,
-    "strict": true
+    "strict": true,
+    "noEmit": false
   },
   "include": [
-    "lib/**/*"
+    "lib/**/*.ts"
   ],
   "exclude": [
     "node_modules",
