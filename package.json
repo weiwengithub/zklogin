@@ -1,6 +1,6 @@
 {
   "name": "zklogin-plus",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "private": false,
   "description": "A powerful zkLogin plugin for Sui blockchain - inspired by @mysten/enoki",
   "keywords": ["sui", "blockchain", "zklogin", "mysten", "web3", "oauth"],

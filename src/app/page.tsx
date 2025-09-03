@@ -98,7 +98,7 @@ export default function Home() {
     return Math.max(0, (state.currentStep / (STEPS.length - 1)) * 100);
   };
 
-  const [isShow] = useState(false)
+  const [isShow] = useState(true)
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 p-6">

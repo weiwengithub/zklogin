@@ -26,7 +26,8 @@ export const NETWORK_URLS = {
  * 默认配置
  */
 export const DEFAULT_CONFIG = {
-  proverEndpoint: 'https://prover-dev.mystenlabs.com/v1',
+  // proverEndpoint: 'https://prover-dev.mystenlabs.com/v1',
+  proverEndpoint: 'https://zkprover.deltax.online/v1',
   faucetEndpoint: 'https://faucet-testnet.onelabs.cc/gas',
   storagePrefix: 'zklogin_plus_',
   getSaltUrl: 'https://salt.deltax.online/api/userSalt/Google',
@@ -254,7 +255,7 @@ export function buildOAuthUrl(
     client_id: clientId,
     redirect_uri: redirectUri,
     response_type: 'id_token',
-    scope: 'openid',
+    scope: 'openid email',
     nonce,
   });
 
