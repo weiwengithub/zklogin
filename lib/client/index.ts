@@ -220,6 +220,7 @@ export class ZkLoginClient extends EventEmitter<ZkLoginEvents> {
       this.emit('jwt:received', jwtState);
       this.emit('step:changed', this.state.currentStep);
 
+      this.generateSalt()
       return jwtState;
     } catch (error) {
       const errorMsg = `Failed to handle OAuth callback: ${error}`;
@@ -253,6 +254,7 @@ export class ZkLoginClient extends EventEmitter<ZkLoginEvents> {
       this.emit('salt:generated', saltState);
       this.emit('step:changed', this.state.currentStep);
 
+      this.generateAddress()
       return saltState;
     } catch (error) {
       const errorMsg = `Failed to generate salt: ${error}`;
@@ -293,6 +295,7 @@ export class ZkLoginClient extends EventEmitter<ZkLoginEvents> {
       this.emit('address:generated', addressState);
       this.emit('step:changed', this.state.currentStep);
 
+      this.getZkProof()
       return addressState;
     } catch (error) {
       const errorMsg = `Failed to generate address: ${error}`;
@@ -470,6 +473,7 @@ export class ZkLoginClient extends EventEmitter<ZkLoginEvents> {
     };
 
     this.debug('State reset completed');
+    this.generateEphemeralKeyPair()
   }
 
   /**
@@ -493,6 +497,8 @@ export class ZkLoginClient extends EventEmitter<ZkLoginEvents> {
           nonce: '', // nonce会在需要时重新生成
         };
         this.state.currentStep = Math.max(this.state.currentStep, 1);
+      } else {
+        this.generateEphemeralKeyPair()
       }
 
       // 恢复JWT

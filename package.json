@@ -1,6 +1,6 @@
 {
-  "name": "@mysten/zklogin-plus",
-  "version": "1.0.0",
+  "name": "zklogin-plus",
+  "version": "1.0.3",
   "private": false,
   "description": "A powerful zkLogin plugin for Sui blockchain - inspired by @mysten/enoki",
   "keywords": ["sui", "blockchain", "zklogin", "mysten", "web3", "oauth"],
@@ -8,19 +8,19 @@
   "license": "Apache-2.0",
   "repository": {
     "type": "git",
-    "url": "https://github.com/your-org/zklogin-plus.git"
+    "url": "https://github.com/weiwengithub/zklogin.git"
   },
-  "main": "lib/index.js",
-  "module": "lib/index.js",
-  "types": "lib/index.d.ts",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
   "exports": {
     ".": {
-      "import": "./lib/index.js",
-      "require": "./lib/index.js",
-      "types": "./lib/index.d.ts"
+      "import": "./dist/index.js",
+      "require": "./dist/index.js",
+      "types": "./dist/index.d.ts"
     }
   },
-  "files": ["lib", "dist"],
+  "files": ["dist"],
   "scripts": {
     "dev": "next dev -p 5173 -H 0.0.0.0 --turbopack",
     "build": "next build",
