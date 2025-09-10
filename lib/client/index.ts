@@ -371,7 +371,7 @@ export class ZkLoginClient extends EventEmitter<ZkLoginEvents> {
       }
 
       // 创建交易
-      const txb = new Transaction();
+      let txb = new Transaction();
 
       if (options.recipient && options.amount) {
         // 转账交易
@@ -380,6 +380,8 @@ export class ZkLoginClient extends EventEmitter<ZkLoginEvents> {
       } else if (options.transactionData) {
         // 自定义交易数据
         // 这里可以根据需要扩展
+
+        txb = options.transactionData;
       } else {
         // 默认交易：转账少量SUI给固定地址
         const [coin] = txb.splitCoins(txb.gas, [MIST_PER_SUI / 1n]);
