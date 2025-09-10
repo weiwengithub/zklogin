@@ -17,9 +17,9 @@ import type { ZkProofData, EphemeralKeyPairState, JwtState, ZkLoginAddressState,
  * 网络URL映射
  */
 export const NETWORK_URLS = {
-  mainnet: 'https://fullnode.mainnet.sui.io',
-  testnet: 'https://fullnode.testnet.sui.io',
-  devnet: 'https://fullnode.devnet.sui.io',
+  mainnet: 'https://rpc-mainnet.onelabs.cc:443',
+  testnet: 'https://rpc-testnet.onelabs.cc:443',
+  devnet: 'https://rpc-testnet.onelabs.cc:443',
 } as const;
 
 /**
